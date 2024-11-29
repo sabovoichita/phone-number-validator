@@ -25,7 +25,6 @@ const validateUserInput = (input) => {
 };
 
 const displayResult = (input) => {
-  console.log("Inserting");
   resultsDiv.innerHTML += `<p>${input}</p> `;
 };
 
@@ -35,9 +34,9 @@ const initEvents = () => {
     validateUserInput(inputValue);
   });
 
-  clearBtn.addEventListener("click", (e) => {
-    console.log("Click on Clear", e.target);
+  clearBtn.addEventListener("click", () => {
     resultsDiv.textContent = "";
+    userInput.value = "";
   });
 };
 
