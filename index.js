@@ -3,15 +3,13 @@ const checkBtn = document.getElementById("check-btn");
 const clearBtn = document.getElementById("clear-btn");
 const resultsDiv = document.getElementById("results-div");
 
-const userInputValues = (input) => {
+const validateUserInput = (input) => {
   if (input === "") {
     alert("Please provide a phone number");
-    return false;
+    return;
   }
-  return true;
 };
-
-const insertInputToResultDiv = (input) => {
+const displayResult = (input) => {
   console.log("Inserting");
   resultsDiv.innerHTML += `<p>"Valid/Invalid" US number: ${input}</p> `;
 };
@@ -19,9 +17,7 @@ const insertInputToResultDiv = (input) => {
 const initEvents = () => {
   checkBtn.addEventListener("click", () => {
     const inputValue = userInput.value;
-    if (userInputValues(inputValue)) {
-      insertInputToResultDiv(inputValue);
-    }
+    validateUserInput(inputValue);
   });
 
   clearBtn.addEventListener("click", (e) => {
