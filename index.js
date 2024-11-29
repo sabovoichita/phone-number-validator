@@ -17,6 +17,8 @@ const initEvents = () => {
 
   clearBtn.addEventListener("click", (e) => {
     console.log("click on Clear", e.target);
+    resultsDiv.textContent = "";
   });
 };
+
 initEvents();
